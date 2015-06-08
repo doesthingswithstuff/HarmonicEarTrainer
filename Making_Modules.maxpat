@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 211.0, 110.0, 1514.0, 961.0 ],
+		"rect" : [ 157.0, 77.0, 1500.0, 766.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -29,12 +29,81 @@
 		"tags" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"frgb" : 0.0,
+					"id" : "obj-17",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 623.382324, 581.0, 199.0, 20.0 ],
+					"text" : "rebangs the preset to refill coll"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"frgb" : 0.0,
+					"id" : "obj-16",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 604.176453, 561.0, 199.0, 20.0 ],
+					"text" : "switches modes in chord_selection"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"frgb" : 0.0,
+					"id" : "obj-15",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 630.926453, 541.0, 64.0, 20.0 ],
+					"text" : "clears coll"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 566.926453, 541.0, 64.0, 20.0 ],
+					"text" : "s collclear"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "bang", "int", "bang" ],
+					"patching_rect" : [ 539.926453, 502.0, 46.0, 20.0 ],
+					"text" : "t b i b"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-31",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 966.558838, 622.0, 20.0, 20.0 ]
+					"patching_rect" : [ 972.558838, 466.0, 20.0, 20.0 ]
 				}
 
 			}
@@ -47,7 +116,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 966.558838, 584.0, 81.0, 20.0 ],
+					"patching_rect" : [ 972.558838, 428.0, 81.0, 20.0 ],
 					"text" : "r mode_reset"
 				}
 
@@ -60,23 +129,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 539.926453, 536.0, 83.0, 20.0 ],
+					"patching_rect" : [ 539.926453, 581.0, 83.0, 20.0 ],
 					"text" : "s mode_reset"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"frgb" : 0.0,
-					"id" : "obj-13",
-					"linecount" : 3,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 527.558838, 576.0, 417.0, 47.0 ],
-					"text" : "mode_reset is for when mode switch occurs- all chords need to be rechecked so they can update in the coll. but it only works with two buttons: why?"
 				}
 
 			}
@@ -101,12 +155,12 @@
 					"fontsize" : 12.0,
 					"frgb" : 0.0,
 					"id" : "obj-8",
-					"linecount" : 11,
+					"linecount" : 20,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 32.051453, 379.0, 301.0, 154.0 ],
-					"text" : "to-do priority:\n\n1) disable 7ths option: gate 7th in chord_generation?\n2) repeat tonic\n3) keyboard control\n\n^ for both of those, create a new inputs going into chord_generation's unpack. find the spot in chord_selection where chords always exist...\n\n4) figure out mode_reset issue"
+					"patching_rect" : [ 32.051453, 379.0, 305.0, 275.0 ],
+					"text" : "to-do priority:\n\n1) disable 7ths option: gate 7th in chord_generation?\n2) repeat tonic\n3) keyboard control\n\n^ for both of those, create a new inputs going into chord_generation's unpack. find the spot in chord_selection where chords always exist...\n\n4) s mode_reset should instead just uncheck and recheck all current chords. that way it will work when the user is not in a preset mode\n \n---- uncheck-rechcek in unused is an option, also maybe save a new preset every time the user chooses new stuff (and delete the old one, so it's all in the same preset slot). the preset options umenu can change to \"user selection\" and then the mode_reset can stay there. "
 				}
 
 			}
@@ -118,7 +172,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 998.058838, 674.0, 53.0, 20.0 ],
+					"patching_rect" : [ 1004.058838, 518.0, 53.0, 20.0 ],
 					"text" : "s preset"
 				}
 
@@ -160,7 +214,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1092.205811, 501.0, 294.852966, 40.0 ],
+					"patching_rect" : [ 1098.205811, 345.0, 294.852966, 40.0 ],
 					"text" : "preset chord options"
 				}
 
@@ -182,7 +236,7 @@
 							"architecture" : "x86"
 						}
 ,
-						"rect" : [ 440.0, 227.0, 1887.0, 662.0 ],
+						"rect" : [ 20.0, 117.0, 1887.0, 662.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -202,6 +256,17 @@
 						"digest" : "",
 						"tags" : "",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-53",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 32.0, 498.0, 20.0, 20.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -6926,7 +6991,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 135.5, 268.0, 66.0, 31.0 ],
-													"text" : "8 12 15 19 22 8chord"
+													"text" : "8 12 16 19 23 8chord"
 												}
 
 											}
@@ -6955,7 +7020,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 64.0, 268.0, 66.0, 31.0 ],
-													"text" : "8 12 15 19 22 8chord"
+													"text" : "8 12 16 19 23 8chord"
 												}
 
 											}
@@ -7346,7 +7411,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 135.5, 268.0, 51.0, 31.0 ],
-													"text" : "7 10 14 17 21 7chord"
+													"text" : "7 11 14 17 21 7chord"
 												}
 
 											}
@@ -7375,7 +7440,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 64.0, 268.0, 51.0, 31.0 ],
-													"text" : "7 10 14 17 21 7chord"
+													"text" : "7 11 14 17 21 7chord"
 												}
 
 											}
@@ -7766,7 +7831,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 135.5, 268.0, 50.0, 31.0 ],
-													"text" : "6 9 12 15 19 6chord"
+													"text" : "6 9 12 16 19 6chord"
 												}
 
 											}
@@ -7795,7 +7860,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 64.0, 268.0, 50.0, 31.0 ],
-													"text" : "6 9 12 15 19 6chord"
+													"text" : "6 9 12 16 19 6chord"
 												}
 
 											}
@@ -8194,7 +8259,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 124.25, 268.0, 50.0, 45.0 ],
-													"text" : "1 0 3 7 10 1chord"
+													"text" : "1 0 4 7 11 1chord"
 												}
 
 											}
@@ -8237,7 +8302,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 50.0, 268.0, 58.0, 45.0 ],
-													"text" : "1 0 3 7 10 1chord"
+													"text" : "1 0 4 7 11 1chord"
 												}
 
 											}
@@ -9057,7 +9122,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 134.0, 268.0, 50.0, 45.0 ],
-													"text" : "3 3 7 10 14 3chord"
+													"text" : "3 4 7 11 14 3chord"
 												}
 
 											}
@@ -9086,7 +9151,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 64.0, 268.0, 50.0, 45.0 ],
-													"text" : "3 3 7 10 14 3chord"
+													"text" : "3 4 7 11 14 3chord"
 												}
 
 											}
@@ -9477,7 +9542,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 133.0, 268.0, 50.0, 45.0 ],
-													"text" : "4 5 9 12 15 4chord"
+													"text" : "4 5 9 12 16 4chord"
 												}
 
 											}
@@ -9506,7 +9571,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 64.0, 268.0, 50.0, 45.0 ],
-													"text" : "4 5 9 12 15 4chord"
+													"text" : "4 5 9 12 16 4chord"
 												}
 
 											}
@@ -9897,7 +9962,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 135.5, 268.0, 62.0, 31.0 ],
-													"text" : "5 7 10 14 17 5chord"
+													"text" : "5 7 11 14 17 5chord"
 												}
 
 											}
@@ -9926,7 +9991,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 64.0, 268.0, 62.0, 31.0 ],
-													"text" : "5 7 10 14 17 5chord"
+													"text" : "5 7 11 14 17 5chord"
 												}
 
 											}
@@ -13086,6 +13151,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-53", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-98", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-85", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -13137,7 +13211,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 998.058838, 616.0, 60.0, 20.0 ],
+					"patching_rect" : [ 1004.058838, 460.0, 60.0, 20.0 ],
 					"text" : "loadbang"
 				}
 
@@ -13153,7 +13227,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 998.058838, 648.0, 389.0, 20.0 ]
+					"patching_rect" : [ 1004.058838, 492.0, 389.0, 20.0 ]
 				}
 
 			}
@@ -13174,7 +13248,7 @@
 							"architecture" : "x86"
 						}
 ,
-						"rect" : [ 1280.0, 160.0, 640.0, 480.0 ],
+						"rect" : [ 1280.0, 176.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -13193,7 +13267,19 @@
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 166.294128, 159.0, 20.0, 20.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -13229,7 +13315,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 158.0, 101.0, 20.0 ],
+									"patching_rect" : [ 50.0, 165.0, 101.0, 20.0 ],
 									"text" : "adding new data"
 								}
 
@@ -13243,7 +13329,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 156.176453, 125.0, 101.0, 20.0 ],
+									"patching_rect" : [ 157.176453, 72.0, 101.0, 20.0 ],
 									"text" : "clearing old data"
 								}
 
@@ -13310,7 +13396,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 166.294128, 162.0, 62.0, 20.0 ],
+									"patching_rect" : [ 166.294128, 122.0, 62.0, 20.0 ],
 									"text" : "r collclear"
 								}
 
@@ -13392,7 +13478,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-118", 0 ],
+									"destination" : [ "obj-4", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-130", 0 ]
@@ -13432,6 +13518,15 @@
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-177", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-118", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -13510,13 +13605,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-55",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 675.382324, 187.681396, 58.0, 31.0 ],
-					"text" : "1 5 8 11 subV"
+					"patching_rect" : [ 675.382324, 187.681396, 59.0, 45.0 ],
+					"text" : "9 12 15 19 6chord"
 				}
 
 			}
@@ -14482,7 +14577,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 539.926453, 501.0, 50.0, 20.0 ],
+					"patching_rect" : [ 553.426453, 561.0, 50.0, 20.0 ],
 					"text" : "s mode"
 				}
 
@@ -14516,16 +14611,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-173", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-168", 0 ],
+					"destination" : [ "obj-7", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-173", 0 ]
@@ -14565,6 +14651,33 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-31", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-7", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-168", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-7", 1 ]
 				}
 
 			}
