@@ -1,6 +1,12 @@
 basic functionality:
-- player selects scene: musical mode, 7ths vs triads, which diatonic chords, if/which secondary dominants, if/which substitute dominants, 
+- player selects scene: key, mode, 7ths vs triads, which diatonic chords, if/which secondary dominants, if/which substitute dominants, 
 - random key selected, tonic played —> number keys now play diatonic triads + modifiers for secondary/sub —> random chord within scene is played
-- buttons: repeat tonic, repeat chord, arpegiate chord, display answer, play one octave up or down
-- prefs: numberkeys on/off, arpegiate always, play chord during answer reveal
+- buttons: repeat tonic, repeat chord, arpegiate chord, display answer,  
+- prefs: numberkeys on/off, arpegiate always, play chord during answer reveal, gen MIDI sound select, answer root/fullchord toggle
+
+advanced:
+- octave select
+- arpeggiate 
+- inversions 
+- voiceleading
 
